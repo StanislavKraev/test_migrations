@@ -65,3 +65,22 @@ INFO  [alembic.runtime.migration] Will assume transactional DDL.
 INFO  [alembic.runtime.migration] Running downgrade 1671375a9017 -> , initial migration
 
 
+
+
+alembic heads
+
+4ba36561a8c8 (head)
+5b22bdd4981d (head)
+
+alembic merge 4ba36561a8c8 5b22bdd4981d
+
+  Generating /home/skraev/projects/test_migrations/alembic/versions/5b56dea28659_.py ... done
+
+alembic upgrade head
+
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade ec2ddccf60aa -> b00e3d457ada, create sessions table
+INFO  [alembic.runtime.migration] Running upgrade ec2ddccf60aa -> ffb63a043e68, add user surname
+INFO  [alembic.runtime.migration] Running upgrade ffb63a043e68, b00e3d457ada -> 5b22bdd4981d, empty message
+INFO  [alembic.runtime.migration] Running upgrade 4ba36561a8c8, 5b22bdd4981d -> 5b56dea28659, empty message
