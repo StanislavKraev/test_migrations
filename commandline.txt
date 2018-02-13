@@ -3,3 +3,65 @@ alembic revision -m "add user surname"
 alembic upgrade head
 alembic upgrade 1
 alembic downgrade -1
+
+
+alembic branches --verbose
+
+Rev: ec2ddccf60aa (branchpoint)
+Parent: 1671375a9017
+Branches into: ffb63a043e68, b00e3d457ada
+Path: /home/skraev/projects/test_migrations/alembic/versions/ec2ddccf60aa_increase_password_length.py
+
+    increase password length
+
+    Revision ID: ec2ddccf60aa
+    Revises: 1671375a9017
+    Create Date: 2018-02-13 12:35:32.157293
+
+             -> ffb63a043e68 (head), add user surname
+             -> b00e3d457ada (head), create sessions table
+
+alembic merge ffb63a043e68 b00e3d457ada
+
+  Generating /home/skraev/projects/test_migrations/alembic/versions/5b22bdd4981d_.py ... done
+
+alembic history
+
+ffb63a043e68, b00e3d457ada -> 5b22bdd4981d (head) (mergepoint), empty message
+ec2ddccf60aa -> ffb63a043e68, add user surname
+ec2ddccf60aa -> b00e3d457ada, create sessions table
+1671375a9017 -> ec2ddccf60aa (branchpoint), increase password length
+<base> -> 1671375a9017, initial migration
+
+
+alembic upgrade head
+
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade ec2ddccf60aa -> ffb63a043e68, add user surname
+INFO  [alembic.runtime.migration] Running upgrade ffb63a043e68, b00e3d457ada -> 5b22bdd4981d, empty message
+
+
+
+alembic downgrade -1
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade 5b22bdd4981d -> ffb63a043e68, b00e3d457ada, empty message
+alembic downgrade -1
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade ffb63a043e68 -> ec2ddccf60aa, add user surname
+alembic downgrade -1
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade b00e3d457ada -> ec2ddccf60aa, create sessions table
+alembic downgrade -1
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade ec2ddccf60aa -> 1671375a9017, increase password length
+alembic downgrade -1
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade 1671375a9017 -> , initial migration
+
+
